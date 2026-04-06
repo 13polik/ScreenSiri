@@ -1,5 +1,10 @@
 # ScreenSiri
 
+![Swift](https://img.shields.io/badge/Swift-5.9-FA7343?logo=swift&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-iOS%2016.4+-007AFF?logo=apple&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-412991?logo=openai&logoColor=white)
+
 A Siri-style AI assistant for iOS that feels like a system overlay. Bring it up from any app via a Siri phrase, Back Tap, or the in-app button — ask a question by voice or text — get a streaming GPT-4o response.
 
 Built entirely in SwiftUI with no third-party dependencies.
