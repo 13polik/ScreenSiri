@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAAAD6342F6A691700EDC74D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6302F6A691600EDC74D /* HomeView.swift */; };
+		FAAAD6352F6A691700EDC74D /* ScreenSiriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD61F2F6A691600EDC74D /* ScreenSiriApp.swift */; };
+		FAAAD6362F6A691700EDC74D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6262F6A691600EDC74D /* SessionManager.swift */; };
+		FAAAD6372F6A691700EDC74D /* InteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6242F6A691600EDC74D /* InteractionManager.swift */; };
+		FAAAD6382F6A691700EDC74D /* AssistantPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD62E2F6A691600EDC74D /* AssistantPanelView.swift */; };
+		FAAAD6392F6A691700EDC74D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6322F6A691600EDC74D /* SettingsView.swift */; };
+		FAAAD63A2F6A691700EDC74D /* SessionMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6292F6A691600EDC74D /* SessionMemory.swift */; };
+		FAAAD63B2F6A691700EDC74D /* AssistMeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6222F6A691600EDC74D /* AssistMeIntent.swift */; };
+		FAAAD63C2F6A691700EDC74D /* MemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6252F6A691600EDC74D /* MemoryManager.swift */; };
+		FAAAD63D2F6A691700EDC74D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6312F6A691600EDC74D /* OnboardingView.swift */; };
+		FAAAD63E2F6A691700EDC74D /* AppShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6212F6A691600EDC74D /* AppShortcuts.swift */; };
+		FAAAD63F2F6A691700EDC74D /* AIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD62B2F6A691600EDC74D /* AIClient.swift */; };
+		FAAAD6402F6A691700EDC74D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD6282F6A691600EDC74D /* AppSettings.swift */; };
+		FAAAD6412F6A691700EDC74D /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD62C2F6A691600EDC74D /* SpeechService.swift */; };
+		FAAAD6422F6A691700EDC74D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAD62F2F6A691600EDC74D /* ContentView.swift */; };
+		FA001AAA2F6A691700EDC74D /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA001AAB2F6A691600EDC74D /* ChatMessage.swift */; };
+		FA001AAC2F6A691700EDC74D /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA001AAD2F6A691600EDC74D /* KeychainService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FAAAD6112F6A564F00EDC74D /* ScreenAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAAD61F2F6A691600EDC74D /* ScreenSiriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSiriApp.swift; sourceTree = "<group>"; };
+		FAAAD6212F6A691600EDC74D /* AppShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShortcuts.swift; sourceTree = "<group>"; };
+		FAAAD6222F6A691600EDC74D /* AssistMeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistMeIntent.swift; sourceTree = "<group>"; };
+		FAAAD6242F6A691600EDC74D /* InteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionManager.swift; sourceTree = "<group>"; };
+		FAAAD6252F6A691600EDC74D /* MemoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryManager.swift; sourceTree = "<group>"; };
+		FAAAD6262F6A691600EDC74D /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		FAAAD6282F6A691600EDC74D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		FAAAD6292F6A691600EDC74D /* SessionMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMemory.swift; sourceTree = "<group>"; };
+		FAAAD62B2F6A691600EDC74D /* AIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIClient.swift; sourceTree = "<group>"; };
+		FAAAD62C2F6A691600EDC74D /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		FAAAD62E2F6A691600EDC74D /* AssistantPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantPanelView.swift; sourceTree = "<group>"; };
+		FAAAD62F2F6A691600EDC74D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FAAAD6302F6A691600EDC74D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FAAAD6312F6A691600EDC74D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		FAAAD6322F6A691600EDC74D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FAAAD6432F6A6DD300EDC74D /* ScreenAssistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ScreenAssistant-Info.plist"; sourceTree = "<group>"; };
+		FA001AAB2F6A691600EDC74D /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		FA001AAD2F6A691600EDC74D /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAAAD60E2F6A564F00EDC74D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAAAD6082F6A564F00EDC74D = {
+			isa = PBXGroup;
+			children = (
+				FAAAD6432F6A6DD300EDC74D /* ScreenAssistant-Info.plist */,
+				FAAAD6202F6A691600EDC74D /* App */,
+				FAAAD6232F6A691600EDC74D /* Intents */,
+				FAAAD6272F6A691600EDC74D /* Managers */,
+				FAAAD62A2F6A691600EDC74D /* Models */,
+				FAAAD62D2F6A691600EDC74D /* Services */,
+				FAAAD6332F6A691600EDC74D /* Views */,
+				FAAAD6122F6A564F00EDC74D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAAAD6122F6A564F00EDC74D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD6112F6A564F00EDC74D /* ScreenAssistant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAAAD6202F6A691600EDC74D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD61F2F6A691600EDC74D /* ScreenSiriApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FAAAD6232F6A691600EDC74D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD6212F6A691600EDC74D /* AppShortcuts.swift */,
+				FAAAD6222F6A691600EDC74D /* AssistMeIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		FAAAD6272F6A691600EDC74D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD6242F6A691600EDC74D /* InteractionManager.swift */,
+				FAAAD6252F6A691600EDC74D /* MemoryManager.swift */,
+				FAAAD6262F6A691600EDC74D /* SessionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FAAAD62A2F6A691600EDC74D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD6282F6A691600EDC74D /* AppSettings.swift */,
+				FA001AAB2F6A691600EDC74D /* ChatMessage.swift */,
+				FAAAD6292F6A691600EDC74D /* SessionMemory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAAAD62D2F6A691600EDC74D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD62B2F6A691600EDC74D /* AIClient.swift */,
+				FA001AAD2F6A691600EDC74D /* KeychainService.swift */,
+				FAAAD62C2F6A691600EDC74D /* SpeechService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAAAD6332F6A691600EDC74D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAAAD62E2F6A691600EDC74D /* AssistantPanelView.swift */,
+				FAAAD62F2F6A691600EDC74D /* ContentView.swift */,
+				FAAAD6302F6A691600EDC74D /* HomeView.swift */,
+				FAAAD6312F6A691600EDC74D /* OnboardingView.swift */,
+				FAAAD6322F6A691600EDC74D /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAAAD6102F6A564F00EDC74D /* ScreenAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAAAD61C2F6A565200EDC74D /* Build configuration list for PBXNativeTarget "ScreenAssistant" */;
+			buildPhases = (
+				FAAAD60D2F6A564F00EDC74D /* Sources */,
+				FAAAD60E2F6A564F00EDC74D /* Frameworks */,
+				FAAAD60F2F6A564F00EDC74D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenAssistant;
+			packageProductDependencies = (
+			);
+			productName = ScreenAssistant;
+			productReference = FAAAD6112F6A564F00EDC74D /* ScreenAssistant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAAAD6092F6A564F00EDC74D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					FAAAD6102F6A564F00EDC74D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = FAAAD60C2F6A564F00EDC74D /* Build configuration list for PBXProject "ScreenAssistant" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAAAD6082F6A564F00EDC74D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FAAAD6122F6A564F00EDC74D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAAAD6102F6A564F00EDC74D /* ScreenAssistant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAAAD60F2F6A564F00EDC74D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAAAD60D2F6A564F00EDC74D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAAD6342F6A691700EDC74D /* HomeView.swift in Sources */,
+				FAAAD6352F6A691700EDC74D /* ScreenSiriApp.swift in Sources */,
+				FAAAD6362F6A691700EDC74D /* SessionManager.swift in Sources */,
+				FAAAD6372F6A691700EDC74D /* InteractionManager.swift in Sources */,
+				FAAAD6382F6A691700EDC74D /* AssistantPanelView.swift in Sources */,
+				FAAAD6392F6A691700EDC74D /* SettingsView.swift in Sources */,
+				FAAAD63A2F6A691700EDC74D /* SessionMemory.swift in Sources */,
+				FAAAD63B2F6A691700EDC74D /* AssistMeIntent.swift in Sources */,
+				FAAAD63C2F6A691700EDC74D /* MemoryManager.swift in Sources */,
+				FAAAD63D2F6A691700EDC74D /* OnboardingView.swift in Sources */,
+				FAAAD63E2F6A691700EDC74D /* AppShortcuts.swift in Sources */,
+				FAAAD63F2F6A691700EDC74D /* AIClient.swift in Sources */,
+				FAAAD6402F6A691700EDC74D /* AppSettings.swift in Sources */,
+				FAAAD6412F6A691700EDC74D /* SpeechService.swift in Sources */,
+				FAAAD6422F6A691700EDC74D /* ContentView.swift in Sources */,
+				FA001AAA2F6A691700EDC74D /* ChatMessage.swift in Sources */,
+				FA001AAC2F6A691700EDC74D /* KeychainService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FAAAD61A2F6A565200EDC74D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GUSWKAAZ6V;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAAAD61B2F6A565200EDC74D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GUSWKAAZ6V;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAAAD61D2F6A565200EDC74D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GUSWKAAZ6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ScreenAssistant-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ScreenSiri needs mic access to hear your questions.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshit.ScreenAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAAAD61E2F6A565200EDC74D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GUSWKAAZ6V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ScreenAssistant-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ScreenSiri needs mic access to hear your questions.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshit.ScreenAssistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAAAD60C2F6A564F00EDC74D /* Build configuration list for PBXProject "ScreenAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAAD61A2F6A565200EDC74D /* Debug */,
+				FAAAD61B2F6A565200EDC74D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAAAD61C2F6A565200EDC74D /* Build configuration list for PBXNativeTarget "ScreenAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAAD61D2F6A565200EDC74D /* Debug */,
+				FAAAD61E2F6A565200EDC74D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAAAD6092F6A564F00EDC74D /* Project object */;
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScreenSiri — AI Screen Assistant for iOS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --border: #2a2a3a;
+      --accent: #7c6cf8;
+      --accent2: #a78bfa;
+      --text: #f0f0f5;
+      --muted: #888899;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--accent2); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,108,248,0.15) 0%, transparent 70%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,108,248,0.12);
+      border: 1px solid rgba(124,108,248,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8rem; color: var(--accent2);
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.2rem; color: var(--muted);
+      max-width: 560px; margin: 0 auto 48px;
+    }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 12px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; transition: all .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #6c5cf0; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(124,108,248,0.35); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+    /* Phone mockup */
+    .mockup-wrap {
+      display: flex; justify-content: center;
+      margin: 72px auto 0;
+      padding: 0 24px;
+    }
+    .phone {
+      width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 44px;
+      padding: 24px 16px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .phone::before {
+      content: '';
+      display: block;
+      width: 80px; height: 28px;
+      background: var(--bg);
+      border-radius: 0 0 20px 20px;
+      margin: 0 auto 20px;
+    }
+    .phone-screen {
+      background: linear-gradient(160deg, #1a1a2e 0%, #0f0f1a 100%);
+      border-radius: 28px;
+      padding: 20px 16px;
+      min-height: 380px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .orb {
+      width: 56px; height: 56px;
+      background: radial-gradient(circle, rgba(167,139,250,0.9), rgba(124,108,248,0.4));
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      box-shadow: 0 0 30px rgba(167,139,250,0.5);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.85; }
+    }
+    .chat-bubble {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 10px 14px;
+      font-size: 0.75rem;
+      color: #d0d0e0;
+      line-height: 1.5;
+    }
+    .chat-bubble.ai {
+      background: rgba(124,108,248,0.12);
+      border-color: rgba(124,108,248,0.2);
+      color: var(--accent2);
+    }
+    .chat-label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    /* Features */
+    section { padding: 96px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      color: var(--accent2); font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin-bottom: 56px; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .2s, transform .2s;
+    }
+    .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .feature-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* How it works */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(124,108,248,0.12);
+      border: 1px solid rgba(124,108,248,0.3);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--accent2);
+      font-size: 0.9rem;
+    }
+    .step-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .step-content p { color: var(--muted); font-size: 0.9rem; }
+
+    /* Tech stack */
+    .stack-pills {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 32px;
+    }
+    .pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 0.85rem; color: var(--muted);
+    }
+
+    /* CTA section */
+    .cta-section {
+      text-align: center;
+      padding: 96px 24px;
+      border-top: 1px solid var(--border);
+      background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(124,108,248,0.1) 0%, transparent 70%);
+    }
+    .cta-section h2 { margin-bottom: 16px; }
+    .cta-section p { color: var(--muted); margin-bottom: 40px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 80px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Screen<span>Siri</span></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="https://github.com/YOUR_USERNAME/ScreenSiri" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">🤖 Open Source iOS AI Assistant</div>
+    <h1>Your AI assistant,<br><span>always one tap away</span></h1>
+    <p>ScreenSiri overlays a conversational AI panel on top of any app. Ask questions, get help, keep working — no switching apps.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/ScreenSiri" target="_blank">
+        View on GitHub
+      </a>
+      <a class="btn btn-secondary" href="#how-it-works">
+        See how it works
+      </a>
+    </div>
+
+    <div class="mockup-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="orb"></div>
+          <div>
+            <div class="chat-label">You</div>
+            <div class="chat-bubble">"Summarise what's on my screen"</div>
+          </div>
+          <div>
+            <div class="chat-label">ScreenSiri</div>
+            <div class="chat-bubble ai">I can see a product page for a MacBook Pro. The listed price is $1,999. Would you like me to find cheaper alternatives?</div>
+          </div>
+          <div>
+            <div class="chat-label">You</div>
+            <div class="chat-bubble">"Yes, find me the best deals"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="features">
+    <div class="section-tag">Capabilities</div>
+    <h2>Everything your screen holds,<br>understood by AI</h2>
+    <p class="section-sub">ScreenSiri combines screen capture, speech recognition, and GPT-4o to give you a truly context-aware assistant.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🎙️</span>
+        <h3>Voice Input</h3>
+        <p>Tap once and speak. On-device speech recognition (SFSpeechRecognizer) converts your voice to text with low latency.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📸</span>
+        <h3>Screen Awareness</h3>
+        <p>Captures the current screen via ReplayKit and sends it as context so the AI knows exactly what you're looking at.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💬</span>
+        <h3>Text Chat</h3>
+        <p>Prefer typing? Use the full-screen chat interface for longer conversations or when voice isn't appropriate.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔐</span>
+        <h3>Secure Key Storage</h3>
+        <p>Your OpenAI API key is stored in iOS Keychain — never in UserDefaults or plain storage.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚡️</span>
+        <h3>Siri Integration</h3>
+        <p>Add a Siri shortcut so you can launch ScreenSiri hands-free with a phrase of your choosing.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌊</span>
+        <h3>Streaming Responses</h3>
+        <p>Responses stream token-by-token so you see the answer as it's generated — no waiting for the full reply.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" style="border-top: 1px solid var(--border);">
+    <div class="section-tag">Architecture</div>
+    <h2>How it works</h2>
+    <p class="section-sub">A SwiftUI overlay app built on top of iOS's broadcast APIs.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Tap the floating orb</h3>
+          <p>A persistent floating button sits over all apps. One tap opens the assistant panel as a translucent overlay.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Speak or type your question</h3>
+          <p>Voice input uses AVAudioEngine + SFSpeechRecognizer. Text chat opens a full keyboard interface.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Screen context is captured</h3>
+          <p>ReplayKit grabs a screenshot of the current app, which is encoded and sent alongside your question to GPT-4o Vision.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Streaming response</h3>
+          <p>GPT-4o streams its reply back. The panel animates and displays tokens in real time. The assistant remembers the full conversation history.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-pills">
+      <span class="pill">SwiftUI</span>
+      <span class="pill">AppIntents</span>
+      <span class="pill">AVAudioEngine</span>
+      <span class="pill">SFSpeechRecognizer</span>
+      <span class="pill">ReplayKit</span>
+      <span class="pill">iOS Keychain</span>
+      <span class="pill">OpenAI GPT-4o</span>
+      <span class="pill">Swift Concurrency</span>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <h2>Build it yourself</h2>
+    <p>Open source under MIT. Clone, add your OpenAI key, and run on any iOS 16.4+ device.</p>
+    <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/ScreenSiri" target="_blank">
+      View Source on GitHub
+    </a>
+  </div>
+
+  <footer>
+    <p>Built by <a href="https://github.com/YOUR_USERNAME" target="_blank">Harry Stark</a> · <a href="https://github.com/YOUR_USERNAME/ScreenSiri" target="_blank">GitHub</a> · MIT License</p>
+  </footer>
+
+</body>
+</html>
