@@ -31,7 +31,7 @@ Built entirely in SwiftUI with no third-party dependencies.
 ## Build & Run
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/screensiri.git
+git clone https://github.com/Harvard2016/screensiri.git
 ```
 
 1. Open `iOS/ScreenAssistant/ScreenAssistant.xcodeproj` in Xcode
