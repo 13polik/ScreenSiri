@@ -16,13 +16,16 @@ jobs:
         with:
           project: iOS/ScreenAssistant/ScreenAssistant.xcodeproj
           scheme: ScreenAssistant
+          configuration: Release
           sdk: iphoneos
           action: archive
           archive-path: .build/Archives/ScreenSiri.xcarchive
           build-number: ${{ github.run_number }}
-          settings: |
-            CODE_SIGNING_ALLOWED: NO
-            CODE_SIGNING_REQUIRED: NO
+          build-settings: |
+            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_REQUIRED=NO
+            CODE_SIGN_IDENTITY=
+            CODE_SIGN_STYLE=Manual
 
       - name: Upload unsigned archive
         uses: actions/upload-artifact@v4
