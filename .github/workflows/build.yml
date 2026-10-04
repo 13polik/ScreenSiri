@@ -1,21 +1,31 @@
-name: Build ScreenSiri
+name: Build ScreenSiri Archive
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
+  archive:
     runs-on: macos-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build ScreenSiri
+      - name: Archive ScreenSiri
         uses: Apple-Actions/xcodebuild@v1
         with:
           project: iOS/ScreenAssistant/ScreenAssistant.xcodeproj
           scheme: ScreenAssistant
-          sdk: iphonesimulator
-          action: build
+          sdk: iphoneos
+          action: archive
+          archive-path: .build/Archives/ScreenSiri.xcarchive
           build-number: ${{ github.run_number }}
+          settings: |
+            CODE_SIGNING_ALLOWED: NO
+            CODE_SIGNING_REQUIRED: NO
+
+      - name: Upload unsigned archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: ScreenSiri-unsigned-xcarchive
+          path: .build/Archives/ScreenSiri.xcarchive
