@@ -1,10 +1,10 @@
-name: Build ScreenSiri Archive
+name: Build ScreenSiri IPA
 
 on:
   workflow_dispatch:
 
 jobs:
-  archive:
+  build:
     runs-on: macos-latest
 
     steps:
@@ -27,8 +27,16 @@ jobs:
             CODE_SIGN_IDENTITY=
             CODE_SIGN_STYLE=Manual
             PRODUCT_BUNDLE_IDENTIFIER=pl.13polik.ScreenSiri
-      - name: Upload unsigned archive
+
+      - name: Create IPA
+        run: |
+          mkdir -p .build/IPA/Payload
+          cp -R ".build/Archives/ScreenSiri.xcarchive/Products/Applications/ScreenAssistant.app" ".build/IPA/Payload/"
+          cd .build/IPA
+          /usr/bin/zip -r "../ScreenAssistant.ipa" Payload
+
+      - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: ScreenSiri-unsigned-xcarchive
-          path: .build/Archives/ScreenSiri.xcarchive
+          name: ScreenAssistant-IPA
+          path: .build/ScreenAssistant.ipa
